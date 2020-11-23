@@ -1,5 +1,24 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
+
+double **Matgen(int fil, int col){
+	int i;
+	double **arr=NULL;
+	
+	arr = (double * *)malloc(fil * sizeof(double));
+	for (i=0; i<fil; i++){
+		arr[i] = (double *) malloc(col*sizeof(double) );
+		if(arr[i] == NULL){
+			perror("ERROR. There is not enough memory");
+			exit(EXIT_FAILURE);
+		}
+	}
+	
+	return arr;
+}
+
+
 
 int JacobiMethod(int n, double A[n][n], double b[n], int xi[n], double eps, int MaxIt){
 	
@@ -37,19 +56,27 @@ int JacobiMethod(int n, double A[n][n], double b[n], int xi[n], double eps, int 
 	return k;
 }
 
-void MatrixMult(int n, double A[n][n], double arr[n]){
+double *Mat_Vec_Mult(int n, double **mat, double *arr){
 	
-	int resu[n];
-	int i, k, sum;
+	int i, k;
+	double *resu=NULL;
+	resu = (double *) malloc(n * sizeof(double));
+	if (resu==NULL){
+		perror("ERROR. There is not enough memory");
+		exit(EXIT_FAILURE);
+	}
+	
 	for(i=0;i<n;i++){
 		
-		sum=0;
+		double sum = 0;
+		
 		for(k=0;k<n;k++){
-			
-			sum+=A[i][k]*arr[k];	
+			sum+=mat[i][k]*arr[k];	
 		}
 		
 		resu[i]=sum;
 	}
+	
+	return resu;
 
 }
