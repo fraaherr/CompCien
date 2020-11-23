@@ -20,10 +20,16 @@ double **Matgen(int fil, int col){
 
 
 
-int JacobiMethod(int n, double A[n][n], double b[n], int xi[n], double eps, int MaxIt){
+int JacobiMethod(int n, double **A, double *b, int *xi, double eps, int MaxIt){
 	
 	int i, j, k = 0;
-	double xk[n];
+	double *xk=NULL;  //Nuevo Vector a formar 
+	xk = (double *) malloc(n * sizeof(double));
+	if (xk==NULL){
+		perror("ERROR. There is not enough memory");
+		exit(EXIT_FAILURE);
+	}
+	
 	double err;
 
 	while (k < MaxIt, k++){
