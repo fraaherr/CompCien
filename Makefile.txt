@@ -1,0 +1,2 @@
+//stack.o: stack.h stack.c
+	//gcc -Wall -g -c stack.o stack.c
