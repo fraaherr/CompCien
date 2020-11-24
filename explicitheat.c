@@ -7,8 +7,8 @@ double T0(double x);
 double g(double x, double t);
 
 int main(){
-	int i, j, n=100, tmax=1, m=2000;
-	double h = 0.01, k=5e-5; 
+	int i, j, n=100, tmax=1, m=20000;
+	double h = 0.01, k=0.00005; 
 	double **T = Matgen(m+1,n);
 	double *x = malloc(n*sizeof(float));
 	double *t = malloc(m*sizeof(float));
