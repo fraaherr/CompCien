@@ -1,2 +1,21 @@
-//stack.o: stack.h stack.c
-	//gcc -Wall -g -c stack.o stack.c
+CC=gcc
+//flags
+FLAGS0 = -O0
+FLAGS2 = -O2
+FLAGS3 = -O3
+//Objetos que deseo compilar
+OBJECTS = explicitheat.c tools.c
+//Archivos binarios que estare generando
+BINARY1 = SOLVEHEAT
+BINARY2 = solvedebug
+
+all: $(BINARY1)
+
+SOLVEHEAT: $(OBJECTS)
+	$(CC) -o $(BINARY1) $FLAGS3 $(OBJECTS)
+	
+solvedebug: $(OBJECTS) //Para hacer el debugging
+	$(CC) -g -o $(BINARY2) $FLAGS0 $(OBJECTS)
+
+//El clean en make permite que se borren los archivos binarios no entendibles para nosotros
+// Dichos archivos con clean no se suben al repositorio
