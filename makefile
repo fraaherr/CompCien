@@ -5,15 +5,15 @@ FLAGS3 = -O3
 
 OBJECTS = heatExp.c tools.c
 
-BIN1 = SOLVEHEAT
-BIN2 = solvedebug
+BIN1 = heat
+BIN2 = debug
 
 all: $(BIN1)
 
-SOLVEHEAT: $(OBJECTS)
+heat: $(OBJECTS)
 	$(CC) -o $(BIN1) $(FLAGS3) $(OBJECTS)
 	
-solvedebug: $(OBJECTS)
+debug: $(OBJECTS)
 	$(CC) -g -o $(BIN2) $(FLAGS0) $(OBJECTS)
 
 
