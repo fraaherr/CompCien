@@ -4,7 +4,7 @@ FLAGS0 = -O0
 FLAGS2 = -O2
 FLAGS3 = -O3
 //Objetos que deseo compilar
-OBJECTS = explicitheat.c tools.c
+OBJECTS = heatExp.c tools.c
 //Archivos binarios que estare generando
 BINARY1 = SOLVEHEAT
 BINARY2 = solvedebug
