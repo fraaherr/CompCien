@@ -13,7 +13,7 @@ all: $(BIN1)
 SOLVEHEAT: $(OBJECTS)
 	$(CC) -o $(BIN1) $(FLAGS3) $(OBJECTS)
 	
-solvedebug: $(OBJECTS) //Para hacer el debugging
+solvedebug: $(OBJECTS)
 	$(CC) -g -o $(BIN2) $(FLAGS0) $(OBJECTS)
 
 
