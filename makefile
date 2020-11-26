@@ -1,4 +1,3 @@
-CC = gcc
 FLAGS0 = -O0
 FLAGS2 = -O2
 FLAGS3 = -O3
@@ -11,9 +10,9 @@ BIN2 = debug
 all: $(BIN1)
 
 heat: $(OBJECTS)
-	$(CC) -o $(BIN1) $(FLAGS3) $(OBJECTS)
+	gcc -o $(BIN1) $(FLAGS3) $(OBJECTS)
 	
 debug: $(OBJECTS)
-	$(CC) -g -o $(BIN2) $(FLAGS0) $(OBJECTS)
+	gcc -g -o $(BIN2) $(FLAGS0) $(OBJECTS)
 
 
