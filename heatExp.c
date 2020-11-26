@@ -42,7 +42,7 @@ int main(){
 	}
 
 	for (i = 0; i <= m; i++){
-		T[i][1] = Tb(t[i]);
+		T[i][n] = Tb(t[i]);
 	}
 
 	//Explicit method solve
