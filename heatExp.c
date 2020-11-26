@@ -1,6 +1,6 @@
 #include "tools.h"
 
-//Definimos las funciones de condición inicial, frontera y externa
+//Definimos las funciones de condiciÃ³n inicial, frontera y externa
 double Ta(double t);
 double Tb(double t);
 double T0(double x);
@@ -15,7 +15,7 @@ int main(){
 	double **T = Matgen(m+1,n);		
 	t = (double *) malloc(m * sizeof(double));
 	
-	//Vector de posición x
+	//Vector de posiciÃ³n x
 	x[0] = 0;
 	x[n] = 1;
 	for( i = 1; i < n; i++ ) {
@@ -29,7 +29,7 @@ int main(){
       	t[i] = t[i-1] + k ; 
 	}
 	
-	//Colocamos la condición inicial t=0
+	//Colocamos la condiciÃ³n inicial t=0
 	
 	for (j=0; j <= n; j++){
 		T[0][j] = T0(x[j]);
@@ -57,6 +57,7 @@ int main(){
 		printf("%f\n",T[19955][i]);
 	}
 	
+	//Para el registro de los datos
 	FILE *expl = fopen("expl.dat", "w");
 	for (i = m/5; i <= m; i++){
 		for (j=n/5; j<=n; j++){
