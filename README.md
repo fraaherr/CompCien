@@ -10,7 +10,11 @@ Este archivo contiene el programa principial en donde se procede a desarrolar la
 ## heatIm.c
 Este archivo contiene el programa principial en donde se procede a desarrolar la solución del metodo de Euler ímplicito de la ecuación de calor.
 ## makefile
-Aquí llamamos a los objetos necesarios para poder ejecutar el programa desde este archivo. Se crea un espacio de intrucciones conjuntas para facilitar la ejecución del código. **Es necesario que el archivo no posea una extensión específica, no debe ser un archivo .txt .c .exe u otro**
+Aquí llamamos a los objetos necesarios para poder ejecutar el programa desde este archivo. Se crea un espacio de intrucciones conjuntas para facilitar la ejecución del código. **Es necesario que el archivo no posea una extensión específica, no debe ser un archivo .txt .c .exe u otro**.
 
 ## Instrucciones:
-
+1. Los archivos pueden ser bajados desde el repositorio de dos maneras distintas:
+  * Dando clic en la opción "Code" y a continuación la opción "Download ZIP".
+  * Usando el Bash de Git mediante el comando "Pull"
+2. Luego de ser bajados, se deben compilar y ejecutar desde la consola que sea de preferencia del usuario mediante el comando "make heatEx" o "make heatIm" asegurandose de que el archivo makefile no tenga ninguna extensión.
+3. El usuario puede realizar las demás funciones a partir de lo que el desee.
