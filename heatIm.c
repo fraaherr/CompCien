@@ -66,13 +66,13 @@ int main(){
 	}
 	
 	for (i=0; i<n; i++){
-		b[i] = exp(x[i]) + k*g(x[i],t[i]); //no sirve aqui xd
+		b[i] = exp(x[i]) + k*g(x[i],t[i]); 
 	}
 	
 	
 	// AQUI faltan pasos para obtener los resultados del metodo
 	
-	// Obteniendo el implicito
+	// Obteniendo el implicito a través de la solución Ax = b
 	int JacobiMethod(int n, double **matrix, double *b, int *xi, double eps, int MaxIt){
 	
 	}
