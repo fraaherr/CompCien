@@ -12,7 +12,7 @@ int main(){
 	int i, j, n=100, tmax=1, m=20000;
 	double h = 0.01, k=0.00005;
 	x = (double *) malloc( n * sizeof(double) );
-	double **T = Matgen(m+1,n);		
+	double **T = Matgen(m+1,n);	//Matriz de la solución
 	t = (double *) malloc(m * sizeof(double));
 	
 	//Vector de posición x
@@ -46,7 +46,7 @@ int main(){
 	}
 
 	//Explicit method solve
-	for (i = 0; i < m; i++){
+	for (i = 0; i < m-1; i++){
 		for (j = 1; j < n-1; j++){
 			T[i+1][j] = (1-2*k/(h*h))*T[i][j] + k/(h*h)*T[i][j+1] + k/(h*h)*T[i][j-1] + k*g(x[i],t[j]);
 			
@@ -59,8 +59,8 @@ int main(){
 	
 	//Para el registro de los datos
 	FILE *expl = fopen("expl.dat", "w");
-	for (i = m/5; i <= m; i++){
-		for (j=n/5; j<=n; j++){
+	for (i = m/5; i < m; i++){
+		for (j=n/5; j<n; j++){
     		fprintf(expl, "%f %f %f", t[i], x[j],T[i][j]);
     		fprintf(expl, "\n");
 		}
