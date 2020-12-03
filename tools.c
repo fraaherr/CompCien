@@ -1,9 +1,19 @@
 #include "tools.h"
+/************** O B S E R V A C I O N E S *************/
+/**
+ Las funciones tienen que ser explicadas, que hacen y
+ significan sus parametros
+**/
 
 double **Matgen(int fil, int col){
 	int i;
 	double **arr=NULL;
 	
+/************** O B S E R V A C I O N E S *************/
+/**
+ Aquí esta el error que les comente sobre el uso de 
+ sizeof(double) en vez de sizeof(double *)
+**/
 	arr = (double * *)malloc(fil * sizeof(double));
 	for (i=0; i<fil; i++){
 		arr[i] = (double *) malloc(col*sizeof(double) );
@@ -16,8 +26,13 @@ double **Matgen(int fil, int col){
 	return arr;
 }
 
-
-
+/************** O B S E R V A C I O N E S *************/
+/**
+  En esta función hay un error importante. Fijense que
+  reazlizan un allocate dentro de la funcíon para una 
+  varaible de uso interno, debe colocarse un free antes
+  de terminar como se indica abajo
+**/
 int JacobiMethod(int n, double **A, double *b, int *xi, double eps, int MaxIt){
 	
 	int i, j, k = 0;
@@ -56,10 +71,18 @@ int JacobiMethod(int n, double **A, double *b, int *xi, double eps, int MaxIt){
 		}
 		
 	}
-	
+
+    /* Aqui debe haber: free(xk); */
 	return k;
 }
 
+/************** O B S E R V A C I O N E S *************/
+/**
+  En este tipo de función el usuario esperaría tener
+  ya el vector que recibe el resultado del producto ya
+  por eso se para por parametro. No se asigna por la
+  salida de la función
+**/
 double *Mat_Vec_Mult(int n, double **mat, double *arr){
 	
 	int i, k;

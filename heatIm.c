@@ -70,7 +70,11 @@ int main(){
 	}
 	
 	
-	// AQUI faltan pasos para obtener los resultados del metodo
+/************** O B S E R V A C I O N E S *************/
+/**
+  con esto asumo que el programa esta incompleto
+**/
+    // AQUI faltan pasos para obtener los resultados del metodo
 	
 	// Obteniendo el implicito a través de la solución Ax = b
 	int JacobiMethod(int n, double **matrix, double *b, int *xi, double eps, int MaxIt){
